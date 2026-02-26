@@ -18,10 +18,3 @@ python3 app.py
 Open:
 
 http://localhost:5000
-Sample Data
-Login as admin and click "Load Sample Data".
-
-Seeded admin (created on seed):
-
-email: admin@campus.edu
-password: admin123
