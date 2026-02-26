@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Events · Campus Volunteer Hub</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-mark"></span>
+    <div>
+      <div class="logo-title">Campus Volunteer Hub</div>
+      <div class="logo-sub">Events · Impact · Community</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a class="active" href="events.html">Events</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a class="admin-link" href="admin.html">Admin</a>
+    <a id="loginLink" href="login.html">Login</a>
+  </nav>
+  <div class="auth-actions">
+    <button id="logoutBtn" class="ghost" type="button">Logout</button>
+    <a class="cta" href="volunteer.html">Join Now</a>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Upcoming Events</h2>
+        <p>Find the right event and reserve your shift.</p>
+      </div>
+      <div class="filters">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="community">Community</button>
+        <button class="pill" data-filter="arts">Arts</button>
+        <button class="pill" data-filter="sports">Sports</button>
+      </div>
+    </div>
+    <div class="event-grid" id="eventGrid"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div>Campus Volunteer Hub · Built for community impact</div>
+  <div class="foot-actions">
+    <button class="pill" onclick="App.toggleTheme()">Toggle Theme</button>
+    <a class="pill" href="admin.html">Admin Console</a>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

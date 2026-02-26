@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin · Campus Volunteer Hub</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-mark"></span>
+    <div>
+      <div class="logo-title">Campus Volunteer Hub</div>
+      <div class="logo-sub">Events · Impact · Community</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a class="admin-link active" href="admin.html">Admin</a>
+    <a id="loginLink" href="login.html">Login</a>
+  </nav>
+  <div class="auth-actions">
+    <button id="logoutBtn" class="ghost" type="button">Logout</button>
+    <a class="cta" href="events.html">View Events</a>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Admin Console</h2>
+        <p>Create new events and manage volunteers.</p>
+      </div>
+      <button class="ghost" onclick="App.seedSample()">Load Sample Data</button>
+    </div>
+
+    <div class="admin-grid">
+      <div class="panel-card">
+        <div class="panel-title">Create Event</div>
+        <form id="eventForm" class="form">
+          <div class="row">
+            <input type="text" id="eventName" placeholder="Event Name" required />
+            <input type="date" id="eventDate" required />
+          </div>
+          <div class="row">
+            <input type="text" id="eventVenue" placeholder="Venue" required />
+            <select id="eventCategory" required>
+              <option value="">Category</option>
+              <option value="community">Community</option>
+              <option value="arts">Arts</option>
+              <option value="sports">Sports</option>
+            </select>
+          </div>
+          <div class="row">
+            <input type="number" id="eventSlots" placeholder="Slots" min="1" required />
+            <input type="text" id="eventTagline" placeholder="Short Tagline" required />
+          </div>
+          <button class="cta">Add Event</button>
+        </form>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-title">Event Roster</div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Date</th><th>Category</th><th>Slots</th><th>Applicants</th><th></th></tr>
+          </thead>
+          <tbody id="eventTable"></tbody>
+        </table>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-title">Volunteer Roster</div>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Skill</th><th>Availability</th><th></th></tr>
+          </thead>
+          <tbody id="volTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>Campus Volunteer Hub · Built for community impact</div>
+  <div class="foot-actions">
+    <button class="pill" onclick="App.toggleTheme()">Toggle Theme</button>
+    <a class="pill" href="volunteer.html">Volunteer Signup</a>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

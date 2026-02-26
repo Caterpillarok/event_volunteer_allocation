@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login · Campus Volunteer Hub</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-mark"></span>
+    <div>
+      <div class="logo-title">Campus Volunteer Hub</div>
+      <div class="logo-sub">Events · Impact · Community</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="volunteer.html">Volunteer</a>
+    <a class="admin-link" href="admin.html">Admin</a>
+    <a class="active" id="loginLink" href="login.html">Login</a>
+  </nav>
+  <div class="auth-actions">
+    <button id="logoutBtn" class="ghost" type="button">Logout</button>
+    <a class="cta" href="volunteer.html">Join Now</a>
+  </div>
+</header>
+
+<main>
+  <section class="login-wrap">
+    <div class="login-card">
+      <div class="eyebrow">Secure Access</div>
+      <h2>Login</h2>
+      <p>Use your campus account to access volunteer or admin tools.</p>
+      <form id="loginForm" class="form">
+        <div class="row">
+          <input type="email" id="loginEmail" placeholder="Email" required />
+          <input type="password" id="loginPass" placeholder="Password" required />
+        </div>
+        <button class="cta" type="submit">Sign In</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="login-wrap">
+    <div class="login-card">
+      <div class="eyebrow">New Here?</div>
+      <h2>Create Account</h2>
+      <p>Register as a volunteer. Admin accounts are created by staff.</p>
+      <form id="registerForm" class="form">
+        <div class="row">
+          <input type="text" id="regName" placeholder="Full Name" required />
+          <input type="email" id="regEmail" placeholder="Email" required />
+        </div>
+        <div class="row">
+          <input type="password" id="regPass" placeholder="Password" required />
+          <input type="text" value="Volunteer" disabled />
+        </div>
+        <div class="row">
+          <input type="text" id="regSkill" placeholder="Skill (optional)" />
+          <select id="regAvailability">
+            <option value="">Availability (optional)</option>
+            <option>Weekdays</option>
+            <option>Weekends</option>
+            <option>Evenings</option>
+          </select>
+        </div>
+        <button class="cta" type="submit">Create Account</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>Campus Volunteer Hub · Built for community impact</div>
+  <div class="foot-actions">
+    <button class="pill" onclick="App.toggleTheme()">Toggle Theme</button>
+    <a class="pill" href="events.html">Browse Events</a>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

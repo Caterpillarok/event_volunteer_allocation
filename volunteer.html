@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Volunteer · Campus Volunteer Hub</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="logo">
+    <span class="logo-mark"></span>
+    <div>
+      <div class="logo-title">Campus Volunteer Hub</div>
+      <div class="logo-sub">Events · Impact · Community</div>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="events.html">Events</a>
+    <a class="active" href="volunteer.html">Volunteer</a>
+    <a class="admin-link" href="admin.html">Admin</a>
+    <a id="loginLink" href="login.html">Login</a>
+  </nav>
+  <div class="auth-actions">
+    <button id="logoutBtn" class="ghost" type="button">Logout</button>
+    <a class="cta" href="events.html">Browse Events</a>
+  </div>
+</header>
+
+<main>
+  <section class="section split">
+    <div>
+      <h2>Volunteer Signup</h2>
+      <p>
+        Quick signup. We will match you with the best fit based on interests and
+        availability.
+      </p>
+      <form id="volForm" class="form">
+        <div class="row">
+          <input type="text" id="volName" placeholder="Full Name" required />
+          <input type="email" id="volEmail" placeholder="Email" required />
+        </div>
+        <div class="row">
+          <input type="text" id="volSkill" placeholder="Skill (e.g., Logistics)" required />
+          <select id="volAvailability" required>
+            <option value="">Availability</option>
+            <option>Weekdays</option>
+            <option>Weekends</option>
+            <option>Evenings</option>
+          </select>
+        </div>
+        <button class="cta">Submit</button>
+      </form>
+      <div class="trust">
+        <div class="trust-item">
+          <div class="trust-title">Verified Teams</div>
+          <div class="trust-sub">Every event is vetted by staff.</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-title">Impact Record</div>
+          <div class="trust-sub">Track hours automatically.</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-card tall">
+      <div class="panel-title">My Applications</div>
+      <div id="myApplications" class="list"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Available Events</h2>
+        <p>Pick a shift and apply instantly.</p>
+      </div>
+    </div>
+    <div class="event-grid" id="eventGrid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>Campus Volunteer Hub · Built for community impact</div>
+  <div class="foot-actions">
+    <button class="pill" onclick="App.toggleTheme()">Toggle Theme</button>
+    <a class="pill" href="admin.html">Admin Console</a>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
