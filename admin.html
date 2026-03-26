@@ -42,7 +42,7 @@
 
     <div class="admin-grid">
       <div class="panel-card">
-        <div class="panel-title">Create Event</div>
+        <div class="panel-title">Create / Edit Event</div>
         <form id="eventForm" class="form">
           <div class="row">
             <input type="text" id="eventName" placeholder="Event Name" required />
@@ -61,15 +61,34 @@
             <input type="number" id="eventSlots" placeholder="Slots" min="1" required />
             <input type="text" id="eventTagline" placeholder="Short Tagline" required />
           </div>
-          <button class="cta">Add Event</button>
+          <div class="row">
+            <select id="eventStatus" required>
+              <option value="open">Open</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+          <div class="row">
+            <button class="cta" id="eventSubmitBtn">Add Event</button>
+            <button class="ghost" type="button" id="eventCancelBtn" style="display:none;">Cancel</button>
+          </div>
         </form>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-title">Application Review</div>
+        <table>
+          <thead>
+            <tr><th>Volunteer</th><th>Event</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody id="appTable"></tbody>
+        </table>
       </div>
 
       <div class="panel-card">
         <div class="panel-title">Event Roster</div>
         <table>
           <thead>
-            <tr><th>Name</th><th>Date</th><th>Category</th><th>Slots</th><th>Applicants</th><th></th></tr>
+            <tr><th>Name</th><th>Date</th><th>Category</th><th>Slots</th><th>Applicants</th><th>Status</th><th></th></tr>
           </thead>
           <tbody id="eventTable"></tbody>
         </table>
@@ -79,7 +98,7 @@
         <div class="panel-title">Volunteer Roster</div>
         <table>
           <thead>
-            <tr><th>Name</th><th>Skill</th><th>Availability</th><th></th></tr>
+            <tr><th>Name</th><th>Skill</th><th>Availability</th><th>Status</th><th></th></tr>
           </thead>
           <tbody id="volTable"></tbody>
         </table>

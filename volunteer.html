@@ -92,6 +92,46 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+<div id="applyModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-head">
+      <h3>Volunteer Application</h3>
+      <button id="applyCloseBtn" class="ghost" type="button">Close</button>
+    </div>
+    <form id="applyForm" class="form">
+      <div class="row">
+        <input type="tel" id="applyPhone" placeholder="Phone (10 digits)" maxlength="10" inputmode="numeric" pattern="[0-9]{10}" required />
+        <input type="number" id="applyAge" placeholder="Age" min="16" max="120" required />
+      </div>
+      <div class="row">
+        <select id="applyAvailability" required>
+          <option value="">Preferred availability</option>
+          <option>Weekdays</option>
+          <option>Weekends</option>
+          <option>Evenings</option>
+        </select>
+        <select id="applyExperience" required>
+          <option value="">Experience level</option>
+          <option value="none">Nil</option>
+          <option value="1 year">1 year</option>
+          <option value="2 years">2 years</option>
+          <option value="3+ years">3+ years</option>
+        </select>
+      </div>
+      <textarea id="applyMotivation" placeholder="Why do you want to volunteer?" maxlength="1000" required></textarea>
+      <div class="muted">Max 1000 characters</div>
+      <div class="panel-card" style="padding:16px; margin-top:12px;">
+        <div class="panel-title">Reference (optional)</div>
+        <div class="row">
+          <input type="text" id="applyRefName" placeholder="Reference name" />
+          <input type="text" id="applyRefContact" placeholder="Reference contact" maxlength="10" inputmode="numeric" pattern="[0-9]{10}" />
+        </div>
+      </div>
+      <button class="cta">Submit Application</button>
+    </form>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
